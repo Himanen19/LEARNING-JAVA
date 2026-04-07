@@ -47,5 +47,11 @@ public class SimpleCalculator {
         this.secondNumber = secondNumber;
     }
 
-
+    @Override
+    public String toString() {
+        return "SimpleCalculator{" +
+                "firstNumber=" + firstNumber +
+                ", secondNumber=" + secondNumber +
+                '}';
+    }
 }

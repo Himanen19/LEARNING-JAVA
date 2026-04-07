@@ -18,5 +18,9 @@ public class Dickson {
 
     public void setName1(String name1) {
         this.name1 = name1;
+
+        //inheritance
+        Customer c = new Customer();
+        c.getCreditLimit();
     }
 }

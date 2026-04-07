@@ -1,6 +1,6 @@
 package org.example;
 
-public class Customer {
+public class Customer extends SimpleCalculator {
     private String name;
     private double creditLimit;
     private String emailAddress;
