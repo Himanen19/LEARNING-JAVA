@@ -3,107 +3,48 @@ package org.example;
 
 import java.security.PublicKey;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-int counter =5;
-int counterEven = 0;
-int counterOdd = 0;
-      while ( counter < 20) {
 
-
-          if( isEvenNumber(counter) ) {
-              System.out.println(counter + " its even.");
-              counterEven++;
-          }
-          else {
-              counterOdd++;
-          }
-
-           counter++;
-          if (counterEven == 50) {
-              break;
-          }
-      }
-        System.out.println(counter + " counter and there is a total of " + counterEven + " even numbers and " + counterOdd + " odd numbers");
+           System.out.println(getEvenDigitSum(2000));
     }
 
-    public static int finalGrade(int exam, int projects){
 
-        if(exam > 90 || projects > 10) {
-            return 100;
-        }
-        else if (exam > 75 && projects >=  5) {
-            return 90;
-        }
-        else if (exam > 50 && projects>= 2 ){
-            return 75;
-        }
-        else {
-        return    0;
-        }
-
-    }
-
-    public static int sumOfDifferences(int[] arr) {
-
-
-     int max = arr[0];
-     int min = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-
-            if(arr[i] > max){
-                max = arr[i];
+    public static boolean isPalindrome (int number) {
+        int reverse = 0;
+        int xnumber = number;
+        while (reverse < number) {
+            if(xnumber == 10 ) {
+              return false;
             }
-            if ( arr[i] < min ) {
-                min = arr[i];
+            else { reverse += xnumber % 10;
+            }
+            xnumber = xnumber / 10;
+            if(reverse < number) {
+                reverse *= 10;
             }
 
         }
-        return max - min;
-    }
-    public static boolean isOdd (int number ) {
-        if (number <= 0) {
-            return false;
-        }
-       return number % 2 != 0 ;
 
+return reverse == number ;
     }
+ public static int getEvenDigitSum(int number) {
 
-    public static int sumOdd(int start, int end ) {
-        int total =0;
-        if ( end < start || end < 0 || start < 3) {
+        if(number < 0) {
             return -1;
         }
-         for (int i = start; i <= end ; i++) {
-              if (  isOdd(i) ) {
-                  total += i;
-              }
-
-         }
-         return total;
-    }
-public static boolean isPrime(int wholeNumber ) {
-        if(wholeNumber<= 2  ){
-            return wholeNumber ==2;
-
+        int lastDigit = number;
+         int total = 0;
+        while(lastDigit > 0) {
+            int lastD = lastDigit % 10;
+            if(lastD % 2 == 0) {
+            total += lastD; }
+            lastDigit /= 10;
         }
-    for (int i = 2; i < wholeNumber /2 ; i++) {
-       if (wholeNumber % i ==0) {
-           return false;
-       }
-
-    }
-    return true;
-}
-
-
-
-public static boolean isEvenNumber ( int number) {
-         return number % 2 == 0 ;
-
-}
-
+        return total;
+ }
 
 }
 
