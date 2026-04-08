@@ -2,8 +2,13 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        String hel = "hello world".toUpperCase();
+//        CoffeMaker coffeMaker = new CoffeMaker();
+//        Refrigrerator fridge = new Refrigrerator();
+//        DishWasher dish = new DishWasher();
+        SmartKitchen kitchen = new SmartKitchen();
 
+        kitchen.loadDishWasher();
+        kitchen.dishWasher.doDishes();
 
     }
 
