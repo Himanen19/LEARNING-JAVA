@@ -5,9 +5,9 @@ public class DishWasher {
     private boolean hasWorkToDo;
 
     public void doDishes() {
-        System.out.println(hasWorkToDo);
         if (hasWorkToDo) {
-            System.out.print("Cleaning the dishes...");
+            System.out.println("Cleaning the dishes...");
+            hasWorkToDo = false;
         }
     }
 

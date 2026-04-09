@@ -1,20 +1,17 @@
 package org.example;
 
 public class SmartKitchen {
-    Refrigrerator fridge = new Refrigrerator();
-    DishWasher dishWasher = new DishWasher();
-    CoffeMaker iceBox = new CoffeMaker();
-
+    private Refrigrerator fridge;
+    private DishWasher dishWasher;
+    private CoffeMaker iceBox;
     // constructors
     public SmartKitchen() {
-
+        fridge = new Refrigrerator();
+        dishWasher = new DishWasher();
+        iceBox = new CoffeMaker();
     }
 
-    public SmartKitchen(CoffeMaker iceBox, DishWasher dishWasher, Refrigrerator fridge) {
-        this.iceBox = iceBox;
-        this.dishWasher = dishWasher;
-        this.fridge = fridge;
-    }
+    //
 
     public void addWater() {
         System.out.print("Adding some water");
@@ -32,6 +29,13 @@ public class SmartKitchen {
 
         dishWasher.setHasWorkToDo(true);
 
+    }
+
+    public void doKitchenWork() {
+
+        iceBox.brewCoffe();
+        fridge.orderFood();
+        dishWasher.doDishes();
     }
 
     public void setKitchenState(boolean gelada, boolean dishes, boolean coffee) {
@@ -55,5 +59,40 @@ public class SmartKitchen {
         this.iceBox = iceBox;
     }
 
+    public Refrigrerator getFridge() {
+        return fridge;
+    }
 
+    public DishWasher getDishWasher() {
+        return dishWasher;
+    }
+
+    public CoffeMaker getIceBox() {
+        return iceBox;
+    }
+}
+
+
+class CoffeMaker {
+
+    private boolean hasWorkToDo;
+
+
+    public boolean isHasWorkToDo() {
+        return hasWorkToDo;
+    }
+
+    public void setHasWorkToDo(boolean hasWorkToDo) {
+        this.hasWorkToDo = hasWorkToDo;
+    }
+
+    protected void brewCoffe() {
+
+        if (hasWorkToDo) {
+            System.out.println("the coffee is on the table...");
+            hasWorkToDo = false;
+        }
+
+
+    }
 }

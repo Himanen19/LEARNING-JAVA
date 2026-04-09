@@ -4,10 +4,11 @@ public class Refrigrerator {
 
     private boolean hasWorkToDo;
 
-    private void orderFood() {
+    protected void orderFood() {
 
         if (hasWorkToDo) {
-            System.out.print("Ordering foods: ... ");
+            System.out.println("Ordering foods: ... ");
+            hasWorkToDo = false;
         }
 
 
