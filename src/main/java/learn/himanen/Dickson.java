@@ -20,7 +20,7 @@ public class Dickson {
         this.name1 = name1;
 
         //inheritance
-        Customer c = new Customer();
+        Customer2 c = new Customer2();
         c.getCreditLimit();
     }
 }
