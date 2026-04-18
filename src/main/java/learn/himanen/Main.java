@@ -7,16 +7,30 @@ public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-
-        LinkedList<Place> thePlaceList = new LinkedList<>();
-
-        Place japan = new Place("Japan", 7000);
-
-
-        addPlace(thePlaceList, japan);
-        System.out.println(thePlaceList);
+        System.out.println(factorial(5));
+//       long n= 6;
+//        long result = n;
+//        for (int i = 1; i < n; i++) {
+//            result *=  (n - i);
+//        }
+//        System.out.println(result);
 
     }
+
+    public static long factorial(int n) {
+        long result = 1;
+        for (int i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    public static int[] distinct(int[] array) {
+        // your solution here
+
+        return null;
+    }
+
 
     public static void addPlace(LinkedList<Place> list, Place place) {
 
