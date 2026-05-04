@@ -59,7 +59,7 @@ public class Bank {
                     ArrayList<Double> transactions = branchCustomer.getTransactions();
                     for (int j = 0; j < transactions.size(); j++) {
                         // O segredo está no java.util.Locale.US
-                        System.out.format(java.util.Locale.US, "[%d]  Amount %.2f%n", (j + 1), transactions.get(j));
+                        System.out.format(java.util.Locale.US, "[%d]  Amount %.2f %n", (j + 1), transactions.get(j));
                     }
                 }
             }
